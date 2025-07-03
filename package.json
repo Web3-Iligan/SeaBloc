@@ -1,0 +1,34 @@
+{
+  "name": "SeaBloc",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write .",
+    "postinstall:copy-auth": "node -e \"require('fs').cpSync('node_modules/@junobuild/core/dist/workers/', './public/workers', {recursive: true});\"",
+    "postinstall": "npm run postinstall:copy-auth"
+  },
+  "dependencies": {
+    "@junobuild/core": "^0.1.16",
+    "next": "15.3.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@junobuild/config": "^0.3.0",
+    "@junobuild/nextjs-plugin": "^3.4.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^15.3.4",
+    "postcss": "^8",
+    "prettier-plugin-tailwindcss": "^0.6.13",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5"
+  }
+}
