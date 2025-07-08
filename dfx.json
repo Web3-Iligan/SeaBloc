@@ -1,16 +1,16 @@
 {
   "canisters": {
     "app_backend": {
-      "main": "app_backend/main.mo",
+      "main": "canisters/app_backend/main.mo",
       "type": "motoko"
     },
     "app_ai": {
       "type": "motoko",
-      "main": "app_ai/main.mo"
+      "main": "canisters/app_ai/main.mo"
     },
     "app_storage": {
       "type": "motoko",
-      "main": "app_storage/main.mo"
+      "main": "canisters/app_storage/main.mo"
     },
     "app_frontend": {
       "type": "assets",
