@@ -1,22 +1,42 @@
 {
   "canisters": {
     "app_backend": {
-      "main": "src/app_backend/main.mo",
+      "main": "app_backend/main.mo",
       "type": "motoko"
+    },
+    "app_ai": {
+      "type": "motoko",
+      "main": "app_ai/main.mo"
+    },
+    "app_storage": {
+      "type": "motoko",
+      "main": "app_storage/main.mo"
     },
     "app_frontend": {
       "type": "assets",
-      "dependencies": ["app_backend"],
+      "dependencies": ["app_backend", "app_ai"],
       "source": ["out"],
       "frontend": {
         "entrypoint": "out/index.html"
       }
+    },
+    
+    "llm": {
+      "candid": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.did",
+      "type": "custom",
+      "specified_id": "w36hm-eqaaa-aaaal-qr76a-cai",
+      "remote": {
+        "id": {
+          "ic": "w36hm-eqaaa-aaaal-qr76a-cai"
+        }
+      },
+      "wasm": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.wasm"
     }
   },
   "defaults": {
     "build": {
       "args": "",
-      "packtool": ""
+      "packtool": "mops sources"
     }
   },
   "output_env_file": ".env",
