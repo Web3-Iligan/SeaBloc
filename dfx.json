@@ -1,26 +1,29 @@
 {
   "canisters": {
-    "app_backend": {
-      "main": "canisters/app_backend/main.mo",
+    "api": {
+      "main": "canisters/api/main.mo",
       "type": "motoko"
     },
-    "app_ai": {
+    "ai": {
       "type": "motoko",
-      "main": "canisters/app_ai/main.mo"
+      "main": "canisters/ai/main.mo"
     },
-    "app_storage": {
+    "storage": {
       "type": "motoko",
-      "main": "canisters/app_storage/main.mo"
+      "main": "canisters/storage/main.mo"
+    },
+    "transactions": {
+      "type": "motoko",
+      "main": "canisters/transactions/main.mo"
     },
     "app_frontend": {
       "type": "assets",
-      "dependencies": ["app_backend", "app_ai"],
+      "dependencies": ["api", "ai", "transactions", "storage"],
       "source": ["out"],
       "frontend": {
         "entrypoint": "out/index.html"
       }
     },
-    
     "llm": {
       "candid": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.did",
       "type": "custom",

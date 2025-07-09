@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dfinity/agent": "^2.4.1",
+    "@dfinity/auth-client": "^2.4.1",
     "next": "15.3.5",
+    "pinata": "^2.4.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "webpack": "^5.99.9"
